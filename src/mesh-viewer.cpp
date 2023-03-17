@@ -24,12 +24,10 @@ public:
         file = GetFilenamesInDir("../models", "ply");
         for (int i = 0; i < file.size(); i++){
             PLYMesh curFile;
-        printf("---\n beginning %d/%lu \n -----\n\n", i, file.size());
             curFile.load("../models/" + file[i]);
             m.push_back(curFile);
         }
         mesh = m[0];
-        printf("setup");
     }
 
     void mouseMotion(int x, int y, int dx, int dy) {
@@ -63,23 +61,26 @@ public:
       if(key == GLFW_KEY_N){
          if(curIn == m.size() -1){
             curIn = 0;
+            std::cout << file[curIn] << std::endl;
          }
          else{
             curIn = curIn + 1;
+            std::cout << file[curIn] << std::endl;
          }
       }
       else if(key == GLFW_KEY_P){
          if(curIn == 0){
             curIn = m.size() -1;
+            std::cout << file[curIn] << std::endl;
          }
          else{
             curIn = curIn - 1;
+            std::cout << file[curIn] << std::endl;
          }
       }
    }
 
     void draw() {
-        std::cout << file[curIn] << std::endl;
         mesh = m[curIn];
         float aspect = ((float)width()) / height();
         renderer.perspective(glm::radians(60.0f), aspect, 0.1f, 50.0f);

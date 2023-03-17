@@ -36,46 +36,44 @@ namespace agl {
          return false;
       }
       // todo: your code here
-      ifstream myFile;
-      myFile.open(filename);
+      std::ifstream myFile(filename);
 
       if(!myFile.is_open()) {
          return false;
       }
 
-      string info;
-      myFile >> info;
-
-      if(info.compare("ply") != 0) {
+      std::string info;
+      if(!std::getline(myFile, info) || info != "ply") {
          return false;
       }
 
-      while(info.compare("vertex") != 0) {
-         myFile >> info;
+      int numVer = 0;
+      int numFace = 0;
+      while(std::getline(myFile, info) && info != "end_header"){
+         std::istringstream s(info);
+         std::string key;
+         s >> key;
+
+         if(key == "element"){
+            std::string eleTy;
+            int con;
+            s >> eleTy >> con;
+
+            if(eleTy == "vertex"){
+               numVer = con;
+            }
+            else if(eleTy == "face"){
+               numFace = con;
+            }
+         }
       }
 
-      myFile >> info;
-      int numVer = stoi(info);
-
-      while(info.compare("face") != 0) {
-         myFile >> info;
-      }
-      myFile >> info;
-      int numFace = stoi(info);
-
-      while(info.compare("end_header") != 0) {
-         myFile >> info;
-      }
 
       for(int i = 0; i < numVer; i++) {
-         GLfloat v1, v2, v3, v4, v5, v6;
-         myFile >> v1;
-         myFile >> v2;
-         myFile >> v3;
-         myFile >> v4;
-         myFile >> v5;
-         myFile >> v6;
-         vec3 vtx = vec3(v1, v2, v3);
+         std::getline(myFile, info);
+         std::istringstream s(info);
+         float v1, v2, v3, v4, v5, v6;
+         s >> v1 >> v2 >> v3 >> v4 >> v5 >> v6;
 
          _positions.push_back(v1);
          _positions.push_back(v2);
@@ -83,22 +81,18 @@ namespace agl {
          _normals.push_back(v4);
          _normals.push_back(v5);
          _normals.push_back(v6);
-
-         myFile >> info;
-         myFile >> info;
       }
 
       for(int i = 0; i < numFace; i++) {
-         myFile >> info;
-         GLuint  f1, f2, f3;
-         myFile >> f1;
-         myFile >> f2;
-         myFile >> f3;
+         int con, f1, f2, f3;
+         myFile >> con >> f1 >> f2 >> f3;
+
          _faces.push_back(f1);
          _faces.push_back(f2);
          _faces.push_back(f3);
-         for(int j = 0; j < numFace - 3; j++){
-            GLuint fi;
+
+         for(int j = 0; j < con - 3; j++){
+            int fi;
             myFile >> fi;
             _faces.push_back(f1 - 1);
             _faces.push_back(fi - 1);
@@ -110,7 +104,7 @@ namespace agl {
          return false;
       }
 
-      return false;
+      return true;
    }
 
    glm::vec3 PLYMesh::minBounds() const {
