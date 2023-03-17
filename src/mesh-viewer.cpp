@@ -28,6 +28,9 @@ public:
             m.push_back(curFile);
         }
         mesh = m[0];
+        renderer.loadShader("normals", "../shaders/normals.vs", "../shaders/normals.fs");
+        renderer.loadShader("phong-vertex", "../shaders/phong-vertex.vs", "../shaders/phong-vertex.fs");
+        renderer.loadShader("phong-pixel", "../shaders/phong-pixel.vs", "../shaders/phong-pixel.fs");
     }
 
     void mouseMotion(int x, int y, int dx, int dy) {
@@ -78,9 +81,18 @@ public:
             std::cout << file[curIn] << std::endl;
          }
       }
+      else if(key == GLFW_KEY_S){
+          if(curSh == sh.size() - 1){
+              curSh = 0;
+          }
+          else{
+              curSh = curSh + 1;
+          } 
+      }
    }
 
     void draw() {
+        renderer.beginShader(sh[curSh]);
         mesh = m[curIn];
         float aspect = ((float)width()) / height();
         renderer.perspective(glm::radians(60.0f), aspect, 0.1f, 50.0f);
@@ -117,12 +129,16 @@ public:
 
         renderer.mesh(mesh);
         //renderer.cube(); // for debugging!
+
+        
+        renderer.endShader();
     }
 
 protected:
     std::vector<string> file = GetFilenamesInDir("../models", "ply");
     PLYMesh mesh;
     std::vector<PLYMesh> m;
+    std::vector<string> sh = {"normals", "phong-vertex", "phong-pixel"};
     vec3 eyePos = vec3(10, 0, 0);
     vec3 lookPos = vec3(0, 0, 0);
     vec3 up = vec3(0, 1, 0);
@@ -131,6 +147,7 @@ protected:
     float a = 0;
     float rad = 10;
     int curIn = 0;
+    int curSh = 0;
 };
 
 int main(int argc, char** argv)
