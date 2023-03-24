@@ -114,6 +114,7 @@ void Shader::compileShader(const std::string& fileName, GLSLShader::Type type) {
   code << inFile.rdbuf();
   inFile.close();
 
+  std::cout << fileName << std::endl;
   compileSource(code.str(), type);
 }
 
@@ -148,7 +149,7 @@ void Shader::compileSource(const string &source, GLSLShader::Type type) {
       logString = c_log;
       delete[] c_log;
     }
-    string msg;
+    string msg = type == GLSLShader::FRAGMENT? "Fragment" : "Vertex";
     msg = "Shader compilation failed.\n";
     msg += logString;
     throw GLSLProgramException(msg);

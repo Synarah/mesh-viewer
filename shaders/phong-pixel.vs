@@ -9,12 +9,11 @@ uniform mat4 ModelViewMatrix;
 uniform mat4 MVP;
 uniform bool HasUV;
 
-out vec3 norEye;
-out vec4 posEye;
+out vec3 pos;
+out vec3 nor;
 
-void main()
-{
-   norEye = normalize(NormalMatrix * vNormals);
-   posEye = ModelViewMatrix * vec4(vPos, 1.0);
+void main(){
+   nor = normalize(NormalMatrix * vNormals);
+   pos = vec3(ModelViewMatrix * vec4(vPos,1.0));
    gl_Position = MVP * vec4(vPos, 1.0);
 }

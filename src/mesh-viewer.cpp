@@ -93,7 +93,15 @@ public:
 
     void draw() {
         renderer.beginShader(sh[curSh]);
-        mesh = m[curIn];
+        renderer.setUniform("m.ka", vec3(0.1f));
+        renderer.setUniform("m.kd", vec3(0.3f));
+        renderer.setUniform("m.ks", vec3(0.6f));
+        renderer.setUniform("m.shine", 30.1f);
+        renderer.setUniform("l.la", vec3(0.5f));
+        renderer.setUniform("l.ld", vec3(0.8f));
+        renderer.setUniform("l.ls", vec3(0.4f));
+
+        mesh = m[curIn]; 
         float aspect = ((float)width()) / height();
         renderer.perspective(glm::radians(60.0f), aspect, 0.1f, 50.0f);
         renderer.lookAt(eyePos, lookPos, up);
