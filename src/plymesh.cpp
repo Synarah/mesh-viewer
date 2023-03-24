@@ -1,6 +1,6 @@
 //--------------------------------------------------
-// Author:
-// Date:
+// Author: Synarah Sitaf
+// Date: 3/23/23
 // Description: Loads PLY files in ASCII format
 //--------------------------------------------------
 

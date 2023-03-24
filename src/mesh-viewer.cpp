@@ -1,6 +1,6 @@
 //--------------------------------------------------
-// Author:
-// Date:
+// Author: Synarah Sitaf
+// Date: 3/23/23
 // Description: Loads PLY files in ASCII format
 //--------------------------------------------------
 
@@ -31,6 +31,9 @@ public:
         renderer.loadShader("normals", "../shaders/normals.vs", "../shaders/normals.fs");
         renderer.loadShader("phong-vertex", "../shaders/phong-vertex.vs", "../shaders/phong-vertex.fs");
         renderer.loadShader("phong-pixel", "../shaders/phong-pixel.vs", "../shaders/phong-pixel.fs");
+        renderer.loadShader("phong-vertex-light", "../shaders/phong-vertex-light.vs", "../shaders/phong-vertex-light.fs");
+        renderer.loadShader("phong-pixel-light", "../shaders/phong-pixels-light.vs", "../shaders/phong-pixels-light.fs");
+        renderer.loadShader("toons", "../shaders/toons.vs", "../shaders/toons.fs");
     }
 
     void mouseMotion(int x, int y, int dx, int dy) {
@@ -94,12 +97,16 @@ public:
     void draw() {
         renderer.beginShader(sh[curSh]);
         renderer.setUniform("m.ka", vec3(0.1f));
-        renderer.setUniform("m.kd", vec3(0.3f));
+        renderer.setUniform("m.kd", vec3(1.0f));
         renderer.setUniform("m.ks", vec3(0.6f));
-        renderer.setUniform("m.shine", 30.1f);
-        renderer.setUniform("l.la", vec3(0.5f));
-        renderer.setUniform("l.ld", vec3(0.8f));
-        renderer.setUniform("l.ls", vec3(0.4f));
+        renderer.setUniform("m.shine", 44.4f);
+        renderer.setUniform("l.la", vec3(0.5f,0.0f,0.5f));
+        renderer.setUniform("l.ld", vec3(0.5f,0.0f,0.5f));
+        renderer.setUniform("l.ls", vec3(0.5f,0.0f,0.5f));
+        renderer.setUniform("l2.la", vec3(0.2f,0.4f,0.8f));
+        renderer.setUniform("l2.ld", vec3(0.2f,0.4f,0.8f));
+        renderer.setUniform("l2.ls", vec3(0.2f,0.4f,0.8f));
+        renderer.setUniform("l2.pos", vec4(0.5f,0.5f,0.5f,1.0f));
 
         mesh = m[curIn]; 
         float aspect = ((float)width()) / height();
@@ -146,7 +153,7 @@ protected:
     std::vector<string> file = GetFilenamesInDir("../models", "ply");
     PLYMesh mesh;
     std::vector<PLYMesh> m;
-    std::vector<string> sh = {"normals", "phong-vertex", "phong-pixel"};
+    std::vector<string> sh = {"normals", "phong-vertex", "phong-pixel","phong-vertex-light","phong-pixel-light","toons"};
     vec3 eyePos = vec3(10, 0, 0);
     vec3 lookPos = vec3(0, 0, 0);
     vec3 up = vec3(0, 1, 0);
