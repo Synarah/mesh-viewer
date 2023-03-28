@@ -34,6 +34,7 @@ public:
         renderer.loadShader("phong-vertex-light", "../shaders/phong-vertex-light.vs", "../shaders/phong-vertex-light.fs");
         renderer.loadShader("phong-pixel-light", "../shaders/phong-pixels-light.vs", "../shaders/phong-pixels-light.fs");
         renderer.loadShader("toons", "../shaders/toons.vs", "../shaders/toons.fs");
+        renderer.loadShader("spotlight", "../shaders/spotlight.vs", "../shaders/spotlight.fs");
     }
 
     void mouseMotion(int x, int y, int dx, int dy) {
@@ -106,7 +107,15 @@ public:
         renderer.setUniform("l2.la", vec3(0.2f,0.4f,0.8f));
         renderer.setUniform("l2.ld", vec3(0.2f,0.4f,0.8f));
         renderer.setUniform("l2.ls", vec3(0.2f,0.4f,0.8f));
-        renderer.setUniform("l2.pos", vec4(0.5f,0.5f,0.5f,1.0f));
+        renderer.setUniform("l2.pos", vec4(5.5f,10.5f,-10.5f,1.0f));
+        renderer.setUniform("l3.la", vec3(1.0f));
+        renderer.setUniform("l3.ld", vec3(1.0f));
+        renderer.setUniform("l3.ls", vec3(1.0f));
+        renderer.setUniform("l3.pos", vec4(25.0f,15.0f,-15.0f,1.0f));
+        renderer.setUniform("l3.exp", 15.0f);
+        renderer.setUniform("l3.co", 30.0f);
+        
+
 
         mesh = m[curIn]; 
         float aspect = ((float)width()) / height();
@@ -153,7 +162,7 @@ protected:
     std::vector<string> file = GetFilenamesInDir("../models", "ply");
     PLYMesh mesh;
     std::vector<PLYMesh> m;
-    std::vector<string> sh = {"normals", "phong-vertex", "phong-pixel","phong-vertex-light","phong-pixel-light","toons"};
+    std::vector<string> sh = {"normals", "phong-vertex", "phong-pixel","phong-vertex-light","phong-pixel-light","toons","spotlight"};
     vec3 eyePos = vec3(10, 0, 0);
     vec3 lookPos = vec3(0, 0, 0);
     vec3 up = vec3(0, 1, 0);
