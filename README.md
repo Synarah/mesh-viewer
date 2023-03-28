@@ -4,6 +4,9 @@ Implements a simple PLY viewer
 
 TODO: Add a representative image for your project here
 
+<img width="493" alt="Untitled 13" src="https://user-images.githubusercontent.com/112510953/228303643-7b8fcd0d-4bfe-4958-92ff-55cc72dfcf8e.png">
+
+
 ## How to build
 
 *Windows*
