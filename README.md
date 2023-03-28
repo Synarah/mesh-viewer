@@ -45,6 +45,7 @@ mesh-viewer/build $ ../bin/mesh-viewer
 ## Demo of basic features
 
 TODO: Document the core features of your viewer (shaders + models)
+
 Normal Shader:
 
 <img width="496" alt="Untitled" src="https://user-images.githubusercontent.com/112510953/228302122-03f49bd6-7d00-4552-96e5-97bf948e2478.png">
@@ -63,6 +64,7 @@ Pixel Shader:
 ## Unique features 
 
 TODO: Show the unique features you made
+
 Two Lightings:
 <img width="498" alt="Untitled 4" src="https://user-images.githubusercontent.com/112510953/228302536-ac7e5f76-ca64-4373-b1ff-df2afe35ccf9.png">
 <img width="494" alt="Untitled 10" src="https://user-images.githubusercontent.com/112510953/228302565-c2435368-d76b-432e-8d3c-b3f2db41ac7b.png">
@@ -72,6 +74,7 @@ Toon Shader:
 <img width="495" alt="Untitled 11" src="https://user-images.githubusercontent.com/112510953/228302643-37419ed3-c013-4847-864e-bbbe8a50f6de.png">
 
 Spotlight:
+
 <img width="492" alt="Untitled 6" src="https://user-images.githubusercontent.com/112510953/228302700-55660112-562c-4263-80fe-39c94dacbbc4.png">
 <img width="491" alt="Untitled 12" src="https://user-images.githubusercontent.com/112510953/228302711-3c289aa4-d627-4a2c-94ba-cb25cf759349.png">
 
