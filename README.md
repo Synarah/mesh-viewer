@@ -53,10 +53,12 @@ Normal Shader:
 
 
 Vertex Shader:
+
 <img width="493" alt="Untitled 2" src="https://user-images.githubusercontent.com/112510953/228302272-5ef97ebe-e604-4573-8f47-44ff88ad19b9.png">
 <img width="487" alt="Untitled 8" src="https://user-images.githubusercontent.com/112510953/228302311-798900c9-cad1-4775-be71-dbacecc1743e.png">
 
 Pixel Shader:
+
 <img width="498" alt="Untitled 3" src="https://user-images.githubusercontent.com/112510953/228302454-4726e26e-8185-4142-b3d6-aba4c95be7f7.png">
 <img width="495" alt="Untitled 9" src="https://user-images.githubusercontent.com/112510953/228302471-86db5022-8ddd-4997-bf72-49f424b59658.png">
 
@@ -66,10 +68,12 @@ Pixel Shader:
 TODO: Show the unique features you made
 
 Two Lightings:
+
 <img width="498" alt="Untitled 4" src="https://user-images.githubusercontent.com/112510953/228302536-ac7e5f76-ca64-4373-b1ff-df2afe35ccf9.png">
 <img width="494" alt="Untitled 10" src="https://user-images.githubusercontent.com/112510953/228302565-c2435368-d76b-432e-8d3c-b3f2db41ac7b.png">
 
 Toon Shader:
+
 <img width="497" alt="Untitled 5" src="https://user-images.githubusercontent.com/112510953/228302620-52b81763-fb79-4f77-aee8-5ce07e28aa8b.png">
 <img width="495" alt="Untitled 11" src="https://user-images.githubusercontent.com/112510953/228302643-37419ed3-c013-4847-864e-bbbe8a50f6de.png">
 
