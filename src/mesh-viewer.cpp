@@ -35,6 +35,7 @@ public:
         renderer.loadShader("phong-pixel-light", "../shaders/phong-pixels-light.vs", "../shaders/phong-pixels-light.fs");
         renderer.loadShader("toons", "../shaders/toons.vs", "../shaders/toons.fs");
         renderer.loadShader("spotlight", "../shaders/spotlight.vs", "../shaders/spotlight.fs");
+        renderer.loadShader("holes", "../shaders/holes.vs", "../shaders/holes.fs");
     }
 
     void mouseMotion(int x, int y, int dx, int dy) {
@@ -162,7 +163,7 @@ protected:
     std::vector<string> file = GetFilenamesInDir("../models", "ply");
     PLYMesh mesh;
     std::vector<PLYMesh> m;
-    std::vector<string> sh = {"normals", "phong-vertex", "phong-pixel","phong-vertex-light","phong-pixel-light","toons","spotlight"};
+    std::vector<string> sh = {"normals", "phong-vertex", "phong-pixel","phong-vertex-light","phong-pixel-light","toons","spotlight","holes"};
     vec3 eyePos = vec3(10, 0, 0);
     vec3 lookPos = vec3(0, 0, 0);
     vec3 up = vec3(0, 1, 0);
