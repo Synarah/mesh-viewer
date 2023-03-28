@@ -48,6 +48,10 @@ mesh-viewer/build $ ../bin/mesh-viewer
 ## Demo of basic features
 
 TODO: Document the core features of your viewer (shaders + models)
+"P" for previous model
+"N" for  next model
+"S" for next shader 
+The mouse pad can be used to move the model around
 
 Normal Shader:
 
