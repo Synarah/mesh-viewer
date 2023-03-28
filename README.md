@@ -4,7 +4,7 @@ Implements a simple PLY viewer
 
 TODO: Add a representative image for your project here
 
-<img width="493" alt="Untitled 13" src="https://user-images.githubusercontent.com/112510953/228303643-7b8fcd0d-4bfe-4958-92ff-55cc72dfcf8e.png">
+<img width="488" alt="Untitled 16" src="https://user-images.githubusercontent.com/112510953/228383693-597db4e3-6435-43c0-bfb1-f2e8310a7fe6.png">
 
 
 ## How to build
@@ -72,8 +72,8 @@ TODO: Show the unique features you made
 
 Two Lightings:
 
-<img width="498" alt="Untitled 4" src="https://user-images.githubusercontent.com/112510953/228302536-ac7e5f76-ca64-4373-b1ff-df2afe35ccf9.png">
-<img width="494" alt="Untitled 10" src="https://user-images.githubusercontent.com/112510953/228302565-c2435368-d76b-432e-8d3c-b3f2db41ac7b.png">
+<img width="487" alt="Untitled 14" src="https://user-images.githubusercontent.com/112510953/228384288-35acd3e7-a133-4df5-939a-78eca74907b1.png">
+<img width="488" alt="Untitled 15" src="https://user-images.githubusercontent.com/112510953/228384296-2cd445be-380d-4960-ab54-2cd51a034bb6.png">
 
 Toon Shader:
 
@@ -84,4 +84,10 @@ Spotlight:
 
 <img width="492" alt="Untitled 6" src="https://user-images.githubusercontent.com/112510953/228302700-55660112-562c-4263-80fe-39c94dacbbc4.png">
 <img width="491" alt="Untitled 12" src="https://user-images.githubusercontent.com/112510953/228302711-3c289aa4-d627-4a2c-94ba-cb25cf759349.png">
+
+Holes:
+<img width="494" alt="Untitled 19" src="https://user-images.githubusercontent.com/112510953/228384364-d2d27c2a-972b-4ae6-a438-7edd922cac78.png">
+<img width="487" alt="Untitled 18" src="https://user-images.githubusercontent.com/112510953/228384383-598d437c-cb27-48a8-b8f4-e6fefd18fabc.png">
+
+
 
