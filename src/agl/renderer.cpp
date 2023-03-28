@@ -426,6 +426,8 @@ void Renderer::mesh(const Mesh& mesh) {
   setUniform("ModelViewMatrix", mv);
   setUniform("NormalMatrix", nmv);
   setUniform("ModelMatrix", _trs);
+  setUniform("ProjectionMatrix", _projectionMatrix);
+  setUniform("ViewMatrix", _viewMatrix);
   setUniform("HasUV", mesh.hasUV());
 
   mesh.render();

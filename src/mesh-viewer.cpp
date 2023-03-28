@@ -104,9 +104,9 @@ public:
         renderer.setUniform("l.la", vec3(0.5f,0.0f,0.5f));
         renderer.setUniform("l.ld", vec3(0.5f,0.0f,0.5f));
         renderer.setUniform("l.ls", vec3(0.5f,0.0f,0.5f));
-        renderer.setUniform("l2.la", vec3(0.2f,0.4f,0.8f));
-        renderer.setUniform("l2.ld", vec3(0.2f,0.4f,0.8f));
-        renderer.setUniform("l2.ls", vec3(0.2f,0.4f,0.8f));
+        renderer.setUniform("l2.la", vec3(1.0f,1.0f,0.0f));
+        renderer.setUniform("l2.ld", vec3(1.0f,1.0f,0.0f));
+        renderer.setUniform("l2.ls", vec3(1.0f,1.0f,0.0f));
         renderer.setUniform("l2.pos", vec4(5.5f,10.5f,-10.5f,1.0f));
         renderer.setUniform("l3.la", vec3(1.0f));
         renderer.setUniform("l3.ld", vec3(1.0f));
